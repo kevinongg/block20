@@ -38,22 +38,20 @@ addNumber.addEventListener(`click`, (event) =>{
       // use if to event.target.innerText === `Sort 1`
       if(event.target.innerText === `Sort 1`) {
         // grab LI from number bank output
-        const numberBankOutputLI = numberBankOutput.querySelector(`li`);
+        const numberBankOutputLI = document.querySelector(`li`);
         // turn the LI into a number
         const numberBankOutputValue = Number(numberBankOutputLI.innerHTML);
         // grab the even number output  
         const evenNumberOutput = document.querySelector(`#evenNumberOutput`) ; 
         // grab the odd number output
         const oddNumberOutput = document.querySelector(`#oddNumberOutput`);
-        // remove the LI from the number bank
-        numberBankOutput.removeChild(numberBankOutputLI)
         // use if statement to determine if number is even or odd, then sort them
         if(numberBankOutputValue % 2 === 0) {
           // append numberbankoutputvalue to even output
-          evenNumberOutput.append(numberBankOutputValue);
+          evenNumberOutput.append(numberBankOutputLI);
           // else append to odd number output
         } else {
-          oddNumberOutput.append(numberBankOutputValue);
+          oddNumberOutput.append(numberBankOutputLI);
         }
       }  
     }
